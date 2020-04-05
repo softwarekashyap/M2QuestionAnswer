@@ -12,21 +12,39 @@ Magento 2 provides a declarative way to describe search request which should be 
 Let us take a quick example from Magento 2 customer module.
 
 ## 1.Preference
+`<preference for="Magento\Customer\Api\AddressRepositoryInterface" type="Kashyap\Customer\Model\ResourceModel\AddressRepository" />`
 
-`<preference for="Magento\Customer\Api\AddressRepositoryInterface" type="Magento\Customer\Model\ResourceModel\AddressRepository" />`
-
-Above code, When someone asks you to instantiate a `Magento\Customer\Api\AddressRepositoryInterface` it will instantiate a `Magento\Customer\Model\ResourceModel\AddressRepository` object (the type attribute).
+Above code, When someone asks you to instantiate a `Magento\Customer\Api\AddressRepositoryInterface` it will instantiate a `Kashyap\Customer\Model\ResourceModel\AddressRepository` object (the type attribute).
 
 Class preference configuration is not just for interfaces we can change the actual classes as well.
 
-`<preference for="Magento\Customer\Model\CustomerManagement" type="Magento\Customer\Model\customModel" />`
+`<preference for="Magento\Customer\Model\CustomerManagement" type="Kashyap\Customer\Model\customModel" />`
 
 You can create 'customModel' class for 'CustomerManagement' and do the changes. Class preference system as a replacement for the class rewrite system.
 
 [Magento 2 Object Manager Preferences](http://alanstorm.com/magento_2_object_manager_preferences)
 
+## 2. Arguments
+	<type name="Magento\Customer\Model\ResourceModel\Group" shared="false">
+	    <arguments>
+	        <argument name="groupManagement" xsi:type="object">Kashyap\Customer\Api\GroupManagementInterface\Proxy</argument>
+	    </arguments>
+    </type>
 
+In th above code, We are sending object as an argument, we are saying system to insert "Proxy" class as an object with the name of groupManagement. Also, we can use Arguments for replacing the existing argument too.
 
+[Magento 2 Object Manager Argument Replacement](http://alanstorm.com/magento_2_object_manager_argument_replacement)
+
+## 3. Plugin
+	<type name="Magento\Customer\Model\ResourceModel\Visitor">
+    	<plugin name="catalogLog" type="Kashyap\Catalog\Model\Plugin\Log" />
+    </type>
+In the above code , `public function clean($object)` in visitor class is called after public function `afterClean(Visitor $subject, $logResourceModel)` which is in Log class
+
+## 4 Virtual Types
+Creating a virtual type is sort of like creating a sub-class for an existing class.
+
+For more note please go through the practical examples some I mentioned as links from Alan, by practice you can get more clear experience.
 
 ---
 
