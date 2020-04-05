@@ -11,7 +11,7 @@ Magento 2 provides a declarative way to describe search request which should be 
 
 Let us take a quick example from Magento 2 customer module.
 
-## 1.Preference
+## 1. Preference
 `<preference for="Magento\Customer\Api\AddressRepositoryInterface" type="Kashyap\Customer\Model\ResourceModel\AddressRepository" />`
 
 Above code, When someone asks you to instantiate a `Magento\Customer\Api\AddressRepositoryInterface` it will instantiate a `Kashyap\Customer\Model\ResourceModel\AddressRepository` object (the type attribute).
@@ -41,7 +41,7 @@ In th above code, We are sending object as an argument, we are saying system to 
     </type>
 In the above code , `public function clean($object)` in visitor class is called after public function `afterClean(Visitor $subject, $logResourceModel)` which is in Log class
 
-## 4 Virtual Types
+## 4. Virtual Types
 Creating a virtual type is sort of like creating a sub-class for an existing class.
 
 For more note please go through the practical examples some I mentioned as links from Alan, by practice you can get more clear experience.
