@@ -4,10 +4,10 @@ Magento 2 provides a declarative way to describe search request which should be 
 
 ---
 ## Use of di.xml
--We can use di.xml for ( rewrite ) preference of a particular class.
--We can send new or replace the existing class [arguments](https://magento.stackexchange.com/questions/103606/what-are-all-the-allowed-xsitype-values-in-the-xmls-from-magento2).
--Use plugins to do some stuff before, after and around the function
--By using virtualTypes creating a sub-class of another class.
+- We can use di.xml for ( rewrite ) preference of a particular class.
+- We can send new or replace the existing class [arguments](https://magento.stackexchange.com/questions/103606/what-are-all-the-allowed-xsitype-values-in-the-xmls-from-magento2).
+- Use plugins to do some stuff before, after and around the function
+- By using virtualTypes creating a sub-class of another class.
 
 ---
 
