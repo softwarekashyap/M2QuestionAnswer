@@ -9,8 +9,8 @@ Magento 2 provides a declarative way to describe search request which should be 
 
 Naming convention here is very similar to ElasticSearch. For example, if you will look at XSD file (Search/etc/search_request.xsd) you will see that there are three possible query types:
 
-	1. Bool Query (analogue for [Elasticsearch BoolQuery](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html))
-	2. Match Query (analogue for [Elasticsearch Match Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html))
+	1. Bool Query analogue for [Elasticsearch BoolQuery](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html)
+	2. Match Query `analogue for [Elasticsearch Match Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html)`
 	3. Filter Query (analogue for [Elasticsearch Filtered Query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-filtered-query.html))
 
 There is [presentation which describes Magento 2 new Search approach and architecture](https://www.slideshare.net/maghamed/the-new-way-of-searching-in-magento-2)
