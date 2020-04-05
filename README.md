@@ -47,6 +47,7 @@ Creating a virtual type is sort of like creating a sub-class for an existing cla
 For more note please go through the practical examples some I mentioned as links from Alan, by practice you can get more clear experience.
 
 ---
+## Use of event.xml
 
 [![Alt text](https://www.kashyapsoftware.com/pub/media/logo/stores/1/ks_logo.png "kashyapsoftware.com")](https://www.kashyapsoftware.com/)
 
