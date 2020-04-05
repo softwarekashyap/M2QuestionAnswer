@@ -11,15 +11,15 @@ Magento 2 provides a declarative way to describe search request which should be 
 
 Let us take a quick example from Magento 2 customer module.
 
-##1.Preference
+## 1.Preference
 
-	`<preference for="Magento\Customer\Api\AddressRepositoryInterface" type="Magento\Customer\Model\ResourceModel\AddressRepository" />`
+`<preference for="Magento\Customer\Api\AddressRepositoryInterface" type="Magento\Customer\Model\ResourceModel\AddressRepository" />`
 
 Above code, When someone asks you to instantiate a `Magento\Customer\Api\AddressRepositoryInterface` it will instantiate a `Magento\Customer\Model\ResourceModel\AddressRepository` object (the type attribute).
 
 Class preference configuration is not just for interfaces we can change the actual classes as well.
 
-	`<preference for="Magento\Customer\Model\CustomerManagement" type="Magento\Customer\Model\customModel" />`
+`<preference for="Magento\Customer\Model\CustomerManagement" type="Magento\Customer\Model\customModel" />`
 
 You can create 'customModel' class for 'CustomerManagement' and do the changes. Class preference system as a replacement for the class rewrite system.
 
