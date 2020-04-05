@@ -1,15 +1,24 @@
-# Magento 2 Reindex From Backend
-![Alt text](header.png?raw=true "Magento 2 Reindex From Backend")
+# Magento 2 Questions Answer for Developer
+### Use of search_request.xml
+Magento 2 provides a declarative way to describe search request which should be executed. search_request.xml is a part of Query API. This declaration describes:
 
-This extension will add the ability to Reindex from backend. Magento 2 [Reindex From Backend](https://www.kashyapsoftware.com/reindex-from-backend.html) by Kashyap Software allows store admins to update individual or all indexes manually right from the admin backend easily instead of running command line.
+	--What index should be queried
+	--What full-text queries should be executed (queries section)
+	--What filters should be applied (filters section)
+	--For which attributes faceted search should be built (Layered Navigation in terms of Magento) (aggregations section)
 
-## Installation without composer
-* Download zip file of this extension
-* Place all the files of the extension in your Magento 2 installation in the folder `app/code/Kashyap/Reindex`
-* Enable the extension: `php bin/magento --clear-static-content module:enable Kashyap_Reindex`
-* Upgrade db scheme: `php bin/magento setup:upgrade`
-* Deply Static Content: `php bin/magento setup:static-content:deploy -f` Developer Mode
-* Deply Static Content: `php bin/magento setup:static-content:deploy` Production Mode
+Naming convention here is very similar to ElasticSearch. For example, if you will look at XSD file (Search/etc/search_request.xsd) you will see that there are three possible query types:
+
+	--Bool Query (analogue for Elasticsearch BoolQuery)
+	--Match Query (analogue for Elasticsearch Match Query)
+	--Filter Query (analogue for Elasticsearch Filtered Query)
+	--There is presentation which describes Magento 2 new Search approach and architecture
+
+For now Magento indexes just product data. And there are 3 scenarios (read 3 search queries for that data):
+
+	--Quick Search (<request query="quick_search_container" index="catalogsearch_fulltext">)
+	--Advanced Search (<request query="advanced_search_container" index="catalogsearch_fulltext">)
+	--Category View (<request query="catalog_view_container" index="catalogsearch_fulltext">). As Magento implies Category View scenatio - as a search query without full text query in it.
 
 
 ---
