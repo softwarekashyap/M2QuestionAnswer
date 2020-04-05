@@ -12,6 +12,7 @@ Magento 2 provides a declarative way to describe search request which should be 
 Let us take a quick example from Magento 2 customer module.
 
 ##1.Preference
+
 	`<preference for="Magento\Customer\Api\AddressRepositoryInterface" type="Magento\Customer\Model\ResourceModel\AddressRepository" />`
 
 Above code, When someone asks you to instantiate a `Magento\Customer\Api\AddressRepositoryInterface` it will instantiate a `Magento\Customer\Model\ResourceModel\AddressRepository` object (the type attribute).
